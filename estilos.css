@@ -1,0 +1,411 @@
+/* =========================================================
+   Redes de bienestar
+   ========================================================= */
+
+:root {
+  --azul-marino: #12304A;
+  --azul-medio: #246A9A;
+  --azul-claro: #DCEFFA;
+  --azul-fondo: #F3F8FC;
+  --blanco: #FFFFFF;
+  --gris-texto: #354451;
+  --linea: #C5D8E6;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: auto; }
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--gris-texto);
+  background-color: var(--blanco);
+}
+
+h1, h2, h3 {
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  color: var(--azul-marino);
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+}
+
+h1 { font-size: 2.3rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.2rem; }
+
+p { margin: 0 0 1rem; }
+
+a { color: var(--azul-medio); text-underline-offset: 3px; }
+a:hover { color: var(--azul-marino); text-decoration-thickness: 2px; }
+a:focus-visible {
+  outline: 3px solid var(--azul-medio);
+  outline-offset: 3px;
+  background-color: var(--azul-claro);
+}
+
+img, svg { max-width: 100%; height: auto; display: block; }
+
+ul { padding-left: 1.2rem; }
+
+/* ---------- Estructura general ---------- */
+.contenedor {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.texto-ancho { max-width: 760px; }
+
+.seccion {
+  padding: 3rem 0;
+  border-top: 1px solid var(--linea);
+}
+
+.fondo-suave { background-color: var(--azul-fondo); }
+
+.solo-lectores { position: absolute; left: -9999px; }
+
+/* ---------- Imágenes ---------- */
+.imagen-seccion {
+  margin: 1.8rem 0 0;
+}
+
+.imagen-seccion img,
+.imagen-seccion svg {
+  width: 100%;
+  border: 1px solid var(--linea);
+}
+
+.imagen-seccion figcaption {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* ---------- Encabezado y menú ---------- */
+.encabezado {
+  background-color: var(--azul-marino);
+  color: var(--blanco);
+}
+
+.encabezado-interno {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+
+.nombre-proyecto {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+}
+
+.menu, .menu-pie {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+.menu a {
+  display: inline-block;
+  padding: 0.35rem 0;
+  color: var(--blanco);
+  text-decoration: none;
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  border-bottom: 2px solid transparent;
+}
+
+.menu a:hover { border-bottom-color: var(--azul-claro); color: var(--blanco); }
+.menu a[aria-current="page"] { border-bottom-color: var(--blanco); }
+.menu a:focus-visible {
+  outline: 3px solid var(--azul-claro);
+  outline-offset: 3px;
+  background-color: transparent;
+}
+
+/* ---------- Portada (inicio) ---------- */
+.portada {
+  background-color: var(--azul-fondo);
+  padding: 5rem 0 5.5rem;
+  border-bottom: 4px solid var(--azul-medio);
+}
+
+.portada-interna {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* Título de la portada: es lo primero que debe verse */
+.portada h1 {
+  font-size: 3rem;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 3px solid var(--azul-claro);
+}
+
+.etiqueta {
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  color: var(--azul-medio);
+  margin-bottom: 0.5rem;
+}
+
+.entrada { font-size: 1.2rem; max-width: 34em; }
+
+.portada .entrada { margin-bottom: 1.8rem; }
+
+.portada-imagen { margin: 0; }
+.portada-imagen svg { width: 100%; border: 1px solid var(--linea); }
+.portada-imagen figcaption {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: var(--gris-texto);
+}
+
+.enlace-destacado {
+  display: inline-block;
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  font-weight: bold;
+  color: var(--blanco);
+  background-color: var(--azul-medio);
+  padding: 0.7rem 1.2rem;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.enlace-destacado:hover { background-color: var(--azul-marino); color: var(--blanco); }
+.enlace-destacado:focus-visible {
+  outline: 3px solid var(--azul-marino);
+  outline-offset: 3px;
+  background-color: var(--azul-marino);
+}
+
+.enlace-grande {
+  font-size: 1.15rem;
+  padding: 0.95rem 1.6rem;
+  border-bottom: 4px solid var(--azul-marino);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.enlace-grande .flecha {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.enlace-grande:hover { transform: translateY(-2px); }
+.enlace-grande:hover .flecha,
+.enlace-grande:focus-visible .flecha { transform: translateX(5px); }
+
+/* ---------- Animaciones (las activa script.js con la clase "js-anim") ---------- */
+@keyframes subir {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+.js-anim .portada-texto > * {
+  animation: subir 0.6s ease-out both;
+}
+.js-anim .portada-texto > :nth-child(2) { animation-delay: 0.1s; }
+.js-anim .portada-texto > :nth-child(3) { animation-delay: 0.2s; }
+.js-anim .portada-texto > :nth-child(4) { animation-delay: 0.3s; }
+
+.js-anim .portada-imagen {
+  animation: subir 0.7s 0.2s ease-out both;
+}
+
+.js-anim .red-estudiantes {
+  animation: flotar 6s ease-in-out 1s infinite;
+}
+
+/* ---------- Bolita azul del puntero (solo computadora) ---------- */
+.puntero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  background-color: #1F8FFF;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.2s ease;
+  will-change: transform;
+}
+
+.puntero.activo { opacity: 0.75; }
+
+@media (hover: none), (pointer: coarse) {
+  .puntero { display: none; }
+}
+
+/* Quien prefiere menos movimiento no ve animaciones */
+@media (prefers-reduced-motion: reduce) {
+  .js-anim .portada-texto > *,
+  .js-anim .portada-imagen,
+  .js-anim .red-estudiantes {
+    animation: none;
+  }
+  .enlace-grande,
+  .enlace-grande .flecha { transition: none; }
+  .enlace-grande:hover { transform: none; }
+}
+
+/* ---------- Encabezado de páginas internas ---------- */
+.titulo-pagina {
+  background-color: var(--azul-fondo);
+  padding: 3rem 0 2.5rem;
+  border-bottom: 1px solid var(--linea);
+}
+
+/* ---------- Contenido ---------- */
+.definiciones dt {
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  font-weight: bold;
+  color: var(--azul-marino);
+  margin-top: 1rem;
+}
+
+.definiciones dd {
+  margin: 0.15rem 0 0 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--azul-claro);
+}
+
+.lista-simple li { margin-bottom: 0.7rem; }
+
+.aviso {
+  border-left: 4px solid var(--azul-medio);
+  background-color: var(--blanco);
+  padding: 0.9rem 1.1rem;
+  margin-top: 1.5rem;
+}
+
+.propuesta {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--linea);
+}
+.propuesta:first-of-type { padding-top: 0.5rem; }
+.propuesta:last-of-type { border-bottom: none; }
+
+/* ---------- Tabla del plan de actividades ---------- */
+.tabla-plan {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.tabla-plan th, .tabla-plan td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.75rem 0.6rem;
+  border-bottom: 1px solid var(--linea);
+}
+
+.tabla-plan thead th {
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  color: var(--azul-marino);
+  border-bottom: 2px solid var(--azul-medio);
+}
+
+.tabla-plan tbody th {
+  width: 5.5rem;
+  color: var(--azul-medio);
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+}
+
+/* ---------- Mensaje final ---------- */
+.cierre {
+  background-color: var(--azul-marino);
+  color: var(--blanco);
+  padding: 3.5rem 0;
+}
+.cierre h2 { color: var(--blanco); }
+
+/* ---------- Autores ---------- */
+.autores {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+}
+.autores li { padding: 0.5rem 0; border-bottom: 1px solid var(--linea); }
+.autores li:last-child { border-bottom: none; }
+
+/* ---------- Pie de página ---------- */
+.pie {
+  background-color: var(--azul-marino);
+  color: var(--azul-claro);
+  padding: 2rem 0;
+  font-size: 0.95rem;
+}
+
+.pie-interno {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+}
+
+.pie-titulo { margin: 0 0 0.25rem; font-weight: bold; color: var(--blanco); }
+.pie-autores { margin: 0; }
+
+.menu-pie a { color: var(--azul-claro); }
+.menu-pie a:hover { color: var(--blanco); }
+.menu-pie a:focus-visible {
+  outline: 3px solid var(--azul-claro);
+  background-color: transparent;
+  color: var(--blanco);
+}
+
+/* ---------- Tabletas ---------- */
+@media (max-width: 900px) {
+  h1 { font-size: 2rem; }
+  .portada { padding: 3.5rem 0; }
+  .portada h1 { font-size: 2.4rem; }
+  .portada-interna { grid-template-columns: 1fr; gap: 2.5rem; }
+  .portada-imagen { max-width: 480px; }
+}
+
+/* ---------- Teléfonos ---------- */
+@media (max-width: 600px) {
+  body { font-size: 1.02rem; }
+  h1 { font-size: 1.65rem; }
+  h2 { font-size: 1.35rem; }
+
+  .seccion { padding: 2.2rem 0; }
+  .portada { padding: 2.5rem 0 3rem; }
+  .portada h1 { font-size: 1.9rem; }
+  .enlace-grande { display: block; text-align: center; }
+  .titulo-pagina { padding: 2rem 0 1.8rem; }
+  .cierre { padding: 2.5rem 0; }
+
+  .encabezado-interno { flex-direction: column; align-items: flex-start; }
+  .menu { flex-direction: column; gap: 0; }
+  .menu-pie { flex-direction: column; gap: 0.3rem; }
+  .tabla-plan tbody th { width: 3.5rem; }
+}
